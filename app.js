@@ -3,9 +3,9 @@ var express = require('express');
 var port = process.env.PORT || 3000;
 
 var org = nforce.createConnection({
-  clientId: '3MVG9uudbyLbNPZMk0vYn7ICarLW4qV5bLdL.KqYws.i1.oN99y14Skth6utXg0nwCuPpSMtr9lB7HIOx6M65',
-  clientSecret: '6326007125179395206',
-  redirectUri: 'https://protected-fortress-46904.herokuapp.com/oauth/_callback',
+  clientId: '3MVG9ZL0ppGP5UrDp8mGkRKozVvsj5xOvozXpx452FN5rxazMvCzJUhbtPhdOGvVYPga6gdoiUpvK0r8G.f64',
+  clientSecret: '6713830823210300651',
+  redirectUri: 'https://lightningout-heroku.herokuapp.com/oauth/_callback',
   apiVersion: 'v34.0',  // optional, defaults to current salesforce API version
   environment: 'production',  // optional, salesforce 'sandbox' or 'production', production default
   mode: 'multi' // optional, 'single' or 'multi' user mode, multi default
@@ -32,7 +32,7 @@ app.get('/oauth/_callback', function(req, res) {
     if(!err) {
       console.log('Access Token: ' + resp.access_token);
       app.locals.oauthtoken = resp.access_token;
-      app.locals.lightningEndPointURI = "https://sedreambmo-dev-ed.lightning.force.com";
+      app.locals.lightningEndPointURI = "https://lightningout-heroku.herokuapp.com";
       res.redirect('/home');
     } else {
       console.log('Error: ' + err.message);
