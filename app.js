@@ -6,8 +6,7 @@ var org = nforce.createConnection({
   clientId: '3MVG9CEn_O3jvv0w29tl1LpypTUVNtr3ssK_.3UG1Bbv6P_iPHU67tajHGQ9uhLMe.AdR5GZnEf0Z0HnJE1lc',
   clientSecret: '5545441474121297880',
   redirectUri: 'https://heroku-product-management.herokuapp.com/oauth/_callback',
-  apiVersion: '1.0',
-  mode: 'multi' // optional, 'single' or 'multi' user mode, multi default
+ 
 });
 
 var app = express();
