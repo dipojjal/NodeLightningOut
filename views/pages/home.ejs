@@ -18,11 +18,13 @@
           var url = "<%= ouathLightningURL %>";
           var token = "Bearer "+"<%= oauthtoken %>";
           console.log(token);
-            $Lightning.use("c:helloCompDependencyApp", function() {
-                  $Lightning.createComponent("c:helloComp", {},
+            $Lightning.use("c:prodArchivalDependency", function() {
+                  $Lightning.createComponent("c:prodArchivalDependencyCmp", {},
                      "hello",
                       function(cmp) {
-                         // do some stuff
+                    var myExternalEvent;
+                    myExternalEvent = $A.get("e.c:prodArchEvent");
+                    myExternalEvent.fire();
                       });
             },url,token );
         </script>
